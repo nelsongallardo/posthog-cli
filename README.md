@@ -1,5 +1,6 @@
 # PostHog CLI
 
+[![CI](https://github.com/nelsongallardo/posthog-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/nelsongallardo/posthog-cli/actions/workflows/ci.yml)
 [![PyPI version](https://img.shields.io/pypi/v/phog-cli)](https://pypi.org/project/phog-cli/)
 [![Python](https://img.shields.io/pypi/pyversions/phog-cli)](https://pypi.org/project/phog-cli/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
