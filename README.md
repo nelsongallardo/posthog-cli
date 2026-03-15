@@ -1,5 +1,10 @@
 # PostHog CLI
 
+[![PyPI version](https://img.shields.io/pypi/v/phog-cli)](https://pypi.org/project/phog-cli/)
+[![Python](https://img.shields.io/pypi/pyversions/phog-cli)](https://pypi.org/project/phog-cli/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Downloads](https://img.shields.io/pypi/dm/phog-cli)](https://pypi.org/project/phog-cli/)
+
 > **Note:** This is an independent, community-built project. It is **not** affiliated with, endorsed by, or maintained by [PostHog Inc.](https://posthog.com) For PostHog's official CLI, see [posthog/posthog/cli](https://github.com/PostHog/posthog/tree/master/cli).
 
 A full-featured command-line interface for [PostHog](https://posthog.com) — the open-source product analytics platform. Manage feature flags, experiments, surveys, dashboards, insights, error tracking, logs, and more, all from your terminal.
