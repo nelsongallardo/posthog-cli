@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Annotated
+from typing import Annotated, Any
 
 import typer
 
@@ -48,7 +48,7 @@ _TILE_COLUMNS: list[tuple[str, str]] = [
 # -- Helpers -------------------------------------------------------------------
 
 
-def _enrich_tiles(tiles: list[dict]) -> list[dict]:
+def _enrich_tiles(tiles: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Add flattened insight fields to each tile dict for table display."""
     for tile in tiles:
         insight = tile.get("insight") or {}

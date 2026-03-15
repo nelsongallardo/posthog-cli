@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from typing import Annotated
+from typing import Annotated, Any
 
 import typer
 
@@ -23,7 +23,7 @@ app = typer.Typer(help="Manage feature flags.")
 # ── Helpers ────────────────────────────────────────────────────────────
 
 
-def _rollout_percentage(flag: dict) -> str:
+def _rollout_percentage(flag: dict[str, Any]) -> str:
     """Extract the rollout percentage from a feature flag's filters."""
     try:
         groups = flag.get("filters", {}).get("groups", [])

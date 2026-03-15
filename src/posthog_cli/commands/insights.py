@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Any
 
 import typer
 
@@ -45,7 +45,7 @@ _DETAIL_FIELDS: list[tuple[str, str]] = [
 
 # -- Helpers -------------------------------------------------------------------
 
-def _parse_query(query_json: str | None, from_file: Path | None) -> dict:
+def _parse_query(query_json: str | None, from_file: Path | None) -> dict[str, Any]:
     """Parse a query object from a JSON string or a file path.
 
     Exactly one of *query_json* or *from_file* must be provided.
@@ -54,12 +54,14 @@ def _parse_query(query_json: str | None, from_file: Path | None) -> dict:
         raise typer.BadParameter("Provide either --query-json or --from-file, not both.")
     if query_json is not None:
         try:
-            return json.loads(query_json)
+            result: dict[str, Any] = json.loads(query_json)
+            return result
         except json.JSONDecodeError as exc:
             raise typer.BadParameter(f"Invalid JSON for --query-json: {exc}") from exc
     if from_file is not None:
         try:
-            return json.loads(from_file.read_text(encoding="utf-8"))
+            result = json.loads(from_file.read_text(encoding="utf-8"))
+            return result
         except json.JSONDecodeError as exc:
             raise typer.BadParameter(f"Invalid JSON in {from_file}: {exc}") from exc
         except OSError as exc:
@@ -67,7 +69,7 @@ def _parse_query(query_json: str | None, from_file: Path | None) -> dict:
     raise typer.BadParameter("Provide --query-json or --from-file.")
 
 
-def _enrich(data: dict) -> dict:
+def _enrich(data: dict[str, Any]) -> dict[str, Any]:
     """Add display-friendly synthetic fields to an insight dict."""
     data["_query_json"] = json.dumps(data.get("query", {}), indent=2)
     tags = data.get("tags") or []

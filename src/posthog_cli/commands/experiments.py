@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 from datetime import datetime, timezone
-from typing import Annotated
+from typing import Annotated, Any
 
 import typer
 
@@ -74,7 +74,7 @@ def create(
     draft: Annotated[bool, typer.Option("--draft/--no-draft", help="Create as draft.")] = True,
 ) -> None:
     """Create a new experiment."""
-    payload: dict = {
+    payload: dict[str, Any] = {
         "name": name,
         "feature_flag_key": feature_flag_key,
     }
@@ -123,7 +123,7 @@ def update(
     ] = None,
 ) -> None:
     """Update an existing experiment."""
-    payload: dict = {}
+    payload: dict[str, Any] = {}
 
     if name is not None:
         payload["name"] = name

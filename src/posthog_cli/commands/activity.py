@@ -19,8 +19,8 @@ def _trend_query(
     date_from: str,
     interval: str,
     name: str,
-) -> dict:  # type: ignore[type-arg]
-    return client.post(
+) -> dict[str, Any]:
+    result: dict[str, Any] = client.post(
         "/query/",
         data={
             "query": {
@@ -41,6 +41,7 @@ def _trend_query(
             }
         },
     )
+    return result
 
 
 @app.command("users")

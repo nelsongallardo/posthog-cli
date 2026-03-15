@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Any
 
 import typer
 
@@ -112,7 +112,7 @@ def create(
             typer.echo(f"Error parsing --questions-json: {exc}", err=True)
             raise typer.Exit(code=1)
 
-        payload: dict = {  # type: ignore[no-redef]
+        payload: dict[str, Any] = {  # type: ignore[no-redef]
             "name": name,
             "type": type,
             "questions": questions,
@@ -153,7 +153,7 @@ def update(
     ] = None,
 ) -> None:
     """Update an existing survey."""
-    payload: dict = {}
+    payload: dict[str, Any] = {}
 
     if name is not None:
         payload["name"] = name
@@ -197,7 +197,7 @@ def stats(
     ] = None,
 ) -> None:
     """Get survey response statistics."""
-    params: dict = {}
+    params: dict[str, str] = {}
     if date_from is not None:
         params["date_from"] = date_from
     if date_to is not None:

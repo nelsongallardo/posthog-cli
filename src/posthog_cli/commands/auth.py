@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Any
+
 import typer
 
 from posthog_cli.config import (
@@ -25,7 +27,7 @@ CLOUD_HOSTS = [
 
 def _try_auth(
     api_key: str, host: str
-) -> tuple[bool, str | None, dict | None]:
+) -> tuple[bool, str | None, dict[str, Any] | None]:
     """Attempt authentication against a host.
 
     Returns (success, error_message, response_json).

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Annotated
+from typing import Annotated, Any
 
 import typer
 
@@ -39,7 +39,7 @@ def query_logs(
     ] = None,
 ) -> None:
     """Query logs with filters."""
-    payload: dict[str, object] = {
+    payload: dict[str, Any] = {
         "date_from": date_from,
         "date_to": date_to,
         "limit": limit,
@@ -56,7 +56,7 @@ def query_logs(
     if cursor:
         payload["after"] = cursor
 
-    data = client.post("/logs/query/", data=payload)  # type: ignore[arg-type]
+    data = client.post("/logs/query/", data=payload)
 
     if is_json_mode():
         print_json(data)
