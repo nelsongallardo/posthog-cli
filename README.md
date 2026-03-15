@@ -1,5 +1,7 @@
 # PostHog CLI
 
+> **Note:** This is an independent, community-built project. It is **not** affiliated with, endorsed by, or maintained by [PostHog Inc.](https://posthog.com) For PostHog's official CLI, see [posthog/posthog/cli](https://github.com/PostHog/posthog/tree/master/cli).
+
 A full-featured command-line interface for [PostHog](https://posthog.com) — the open-source product analytics platform. Manage feature flags, experiments, surveys, dashboards, insights, error tracking, logs, and more, all from your terminal.
 
 Built with AI agents in mind: every command supports `--json` output, `--yes` for non-interactive use, and a raw `posthog api` escape hatch for anything the CLI doesn't cover yet.
@@ -329,13 +331,13 @@ pytest
 
 ## Acknowledgments
 
-This project is built on top of the [PostHog](https://posthog.com) REST API. PostHog is an open-source product analytics platform that provides event tracking, feature flags, A/B testing, surveys, session replay, and more.
+This is an independent, community-driven project built on top of the [PostHog](https://posthog.com) REST API. It is not officially affiliated with or endorsed by PostHog Inc.
+
+PostHog is an open-source product analytics platform that provides event tracking, feature flags, A/B testing, surveys, session replay, and more. Thanks to the PostHog team for building an incredible platform and providing a comprehensive, well-documented API that makes community tools like this possible.
 
 - [PostHog Website](https://posthog.com)
 - [PostHog GitHub](https://github.com/PostHog/posthog)
 - [PostHog API Documentation](https://posthog.com/docs/api)
-
-Thanks to the PostHog team for building an incredible open-source analytics platform and providing a comprehensive API that makes tools like this possible.
 
 ## License
 

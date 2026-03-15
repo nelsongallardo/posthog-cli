@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "posthog-cli"
 version = "0.1.0"
-description = "A command-line interface for managing PostHog analytics — feature flags, experiments, surveys, dashboards, insights, and more."
+description = "Community-built CLI for managing PostHog analytics — feature flags, experiments, surveys, dashboards, insights, and more. Not affiliated with PostHog Inc."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
