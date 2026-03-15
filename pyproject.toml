@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "posthog-cli"
+name = "ph-cli"
 version = "0.1.0"
 description = "Community-built CLI for managing PostHog analytics — feature flags, experiments, surveys, dashboards, insights, and more. Not affiliated with PostHog Inc."
 readme = "README.md"

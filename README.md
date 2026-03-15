@@ -32,10 +32,10 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-### From PyPI (coming soon)
+### From PyPI
 
 ```bash
-pip install posthog-cli
+pip install ph-cli
 ```
 
 ## Quick Start
