@@ -35,7 +35,7 @@ pip install -e .
 ### From PyPI
 
 ```bash
-pip install ph-cli
+pip install phog-cli
 ```
 
 ## Quick Start
